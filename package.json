@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "dependencies": {
     "@astrojs/mdx": "4.3.13",
-    "@astrojs/rss": "4.0.14",
-    "@astrojs/sitemap": "3.6.0",
-    "@tailwindcss/vite": "4.1.18",
-    "astro": "5.16.5",
+    "@astrojs/rss": "4.0.15",
+    "@astrojs/sitemap": "3.7.0",
+    "@tailwindcss/vite": "4.2.0",
+    "astro": "5.17.3",
     "sharp": "0.34.5",
-    "tailwindcss": "4.1.18"
+    "tailwindcss": "4.2.0"
   },
   "scripts": {
     "astro": "astro",
@@ -20,6 +20,6 @@
   },
   "type": "module",
   "devDependencies": {
-    "vitest": "4.0.15"
+    "vitest": "4.0.18"
   }
 }
