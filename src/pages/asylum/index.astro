@@ -5,6 +5,7 @@ import BaseHead from '@components/BaseHead.astro';
 import Footer from '@components/Footer.astro';
 import FormattedDate from '@components/FormattedDate.astro';
 import Header from '@components/Header.astro';
+import { normalizeBlogId } from '@utils/blog';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@config/setup';
 
 const posts = (await getCollection('blog')).sort(
@@ -94,7 +95,7 @@ const posts = (await getCollection('blog')).sort(
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.id}/`}>
+								<a href={`/asylum/${normalizeBlogId(post.id)}/`}>
 									{post.data.heroImage && (
 										<Image width={720} height={360} src={post.data.heroImage} alt="" />
 									)}

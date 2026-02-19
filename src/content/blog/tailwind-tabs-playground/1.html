@@ -1,0 +1,27 @@
+<main class="min-h-screen bg-slate-100 p-8">
+  <section class="mx-auto max-w-2xl rounded-xl bg-white p-6 shadow-lg">
+    <h1 class="mb-4 text-2xl font-bold text-slate-900">Tabs showcase</h1>
+
+    <div class="inline-flex rounded-lg bg-slate-100 p-1" role="tablist" aria-label="Example tabs">
+      <button class="tab-button rounded-md px-3 py-2 text-sm font-medium text-slate-700" data-panel="panel-overview">Overview</button>
+      <button class="tab-button rounded-md px-3 py-2 text-sm font-medium text-slate-700" data-panel="panel-features">Features</button>
+      <button class="tab-button rounded-md px-3 py-2 text-sm font-medium text-slate-700" data-panel="panel-pricing">Pricing</button>
+    </div>
+
+    <div class="mt-4 rounded-lg border border-slate-200 p-4">
+      <div id="panel-overview" class="tab-panel">
+        <p class="text-slate-600">Overview content goes here.</p>
+      </div>
+      <div id="panel-features" class="tab-panel hidden">
+        <ul class="list-disc space-y-2 pl-5 text-slate-600">
+          <li>Fast setup</li>
+          <li>Reusable patterns</li>
+          <li>Accessible controls</li>
+        </ul>
+      </div>
+      <div id="panel-pricing" class="tab-panel hidden">
+        <p class="text-slate-600">Pricing content goes here.</p>
+      </div>
+    </div>
+  </section>
+</main>
