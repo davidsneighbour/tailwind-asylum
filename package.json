@@ -14,7 +14,12 @@
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
-    "preview": "astro preview"
+    "preview": "astro preview",
+        "test": "vitest --run",
+    "test:watch": "vitest"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "vitest": "4.0.15"
+  }
 }
