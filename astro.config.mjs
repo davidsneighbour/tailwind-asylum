@@ -11,6 +11,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), react(), sitemap()],
+  server: {
+    host: true,
+  },
 
   vite: {
     plugins: [tailwindcss()],
