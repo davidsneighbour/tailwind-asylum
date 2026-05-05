@@ -33,7 +33,9 @@
     "@astrojs/check": "0.9.9",
     "@iconify-json/lucide": "1.2.105",
     "@iconify-json/mdi": "1.2.3",
+    "@release-it/conventional-changelog": "11.0.0",
     "@tailwindcss/typography": "0.5.19",
+    "release-it": "20.0.1",
     "typescript": "6.0.3",
     "vitest": "4.1.5"
   }
