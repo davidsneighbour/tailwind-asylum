@@ -2,6 +2,16 @@
 
 This repository is an Asylum repository: a runnable test, sample, support, bug reproduction, design, and documentation site for one technical ecosystem.
 
+## Asylum repositories
+
+The Asylum system is intentionally split across multiple repositories. Each repository SHOULD share the same workflow, branch model, and documentation structure while keeping its ecosystem-specific implementation details.
+
+Current Asylum repositories:
+
+* Hugo Asylum: <https://github.com/davidsneighbour/hugo-asylum>
+* Tailwind Asylum: <https://github.com/davidsneighbour/tailwind-asylum>
+* Ananke Asylum: <https://github.com/gohugo-ananke/ananke-asylum>
+
 ## Purpose
 
 The repository MUST provide a fast way to test an idea, reproduce an issue, document behaviour, create a sample theme, or turn a support or Discourse conversation into a stable test case.
