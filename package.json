@@ -22,6 +22,7 @@
   "scripts": {
     "astro": "astro",
     "build": "astro build",
+    "check": "astro check",
     "dev": "astro dev --verbose",
     "preview": "astro preview",
     "test": "vitest --run",
