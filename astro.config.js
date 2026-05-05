@@ -7,10 +7,12 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import icon from 'astro-icon';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), react(), sitemap()],
+  integrations: [mdx(), react(), sitemap(), icon()],
   server: {
     host: true,
   },
