@@ -1,0 +1,64 @@
+---
+import { Code } from 'astro-expressive-code/components';
+import playgroundCss from '@styles/playground.css?inline';
+
+interface Props {
+	baseDir: string;
+	id: string;
+	height?: number;
+}
+
+const { baseDir, id, height = 380 } = Astro.props;
+
+const fileImports = import.meta.glob('/src/content/blog/**/*.{html,css,js}', {
+	query: '?raw',
+	import: 'default',
+	eager: true,
+});
+
+const htmlPath = `/src/content/blog/${baseDir}/${id}.html`;
+const cssPath = `/src/content/blog/${baseDir}/${id}.css`;
+const jsPath = `/src/content/blog/${baseDir}/${id}.js`;
+
+const html = fileImports[htmlPath];
+const css = fileImports[cssPath];
+const js = fileImports[jsPath];
+
+if (typeof html !== 'string') {
+	throw new Error(`Missing HTML example file: ${htmlPath}`);
+}
+if (cssPath in fileImports && typeof css !== 'string') {
+	throw new Error(`Invalid CSS example file: ${cssPath}`);
+}
+if (jsPath in fileImports && typeof js !== 'string') {
+	throw new Error(`Invalid JS example file: ${jsPath}`);
+}
+
+const srcdoc = `<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>${playgroundCss}${typeof css === 'string' ? css : ''}</style>
+	</head>
+	<body>
+		${html}
+		${typeof js === 'string' ? `<script>${js}</script>` : ''}
+	</body>
+</html>`;
+---
+
+<div class="not-prose">
+	<iframe
+		title={`${baseDir} preview`}
+		srcdoc={srcdoc}
+		style={`height: ${height}px`}
+		class="w-full border border-neutral-200 bg-white dark:border-neutral-800"
+		sandbox="allow-scripts"
+		loading="lazy"
+	></iframe>
+	<div class="mt-4 space-y-4">
+		<Code code={html} lang="html" meta='title="index.html"' />
+		{typeof css === 'string' && <Code code={css} lang="css" meta='title="styles.css"' />}
+		{typeof js === 'string' && <Code code={js} lang="js" meta='title="script.js"' />}
+	</div>
+</div>
