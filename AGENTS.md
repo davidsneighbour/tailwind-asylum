@@ -59,7 +59,7 @@ Use branch prefixes from [docs/branch-workflow.md](docs/branch-workflow.md): `te
 
 Agents MUST work on `main` unless the user explicitly instructs otherwise. Merge completed work only with squash or rebase merges; do not create merge commits.
 
-Every activity and change MUST be committed to the repository with a clear, descriptive commit message. Every commit MUST reference one or more repository issues. If no suitable issue exists, open one before committing and reference it in the commit message.
+Every activity and change MUST be committed to the repository with a clear, descriptive commit message. Every commit MUST reference one or more repository issues. If the task already names or clearly originates from an issue, use that issue. If no issue is already known at commit time, create a new issue for the completed task, reference it in the commit message, and close it with the commit or immediately after the commit. Do not search GitHub Issues merely to attach unrelated work to an existing issue.
 
 When opening or updating GitHub issues, inspect and apply suitable existing repository labels. Do not create or update repository labels unless the user explicitly confirms the label provisioning work.
 
