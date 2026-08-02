@@ -1,0 +1,26 @@
+h1 {
+  width: 11ch;
+  overflow: hidden;
+  border-right: 0.08em solid currentColor;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.9;
+  white-space: nowrap;
+  animation:
+    type 2s steps(11),
+    caret 0.8s step-end infinite;
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
