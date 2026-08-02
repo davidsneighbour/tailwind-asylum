@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-`tailwind-asylum` is an Asylum repository: a runnable Astro, Tailwind CSS, and React site for examples, support cases, bug reproductions, design tests, and documentation. It is boilerplate, not a product. `main` MUST stay clean, reusable, and runnable; unfinished investigations belong on topic branches.
+`tailwind-asylum` is an Asylum repository: a runnable Astro, Tailwind CSS, and React site for examples, support cases, bug reproductions, design tests, and documentation. It is boilerplate, not a product. `main` MUST stay clean, reusable, and runnable; use other branches only when explicitly instructed.
 
 - `src/pages/` contains Astro routes, including `/asylum/` and the dynamic case route.
 - `src/content/blog/` contains Markdown/MDX case content. Directory-based cases may include sibling `*.html`, `*.css`, and `*.js` playground files.
@@ -57,7 +57,15 @@ For content test cases, follow [docs/testcase-workflow.md](docs/testcase-workflo
 
 Use branch prefixes from [docs/branch-workflow.md](docs/branch-workflow.md): `test/`, `bug/`, `discourse/`, `support/`, `howto/`, `theme/`, `component/`, `design/`, `experiment/`, or `archive/`. Examples: `bug/gh-123-renderhook-images`, `support/customer-theme-switcher`, `component/tabs-keyboard-navigation`.
 
-Use Conventional Commits. Common types include `feat`, `fix`, `docs`, `test`, `refactor`, `build`, `chore`, and `content` for case/content updates. Examples: `fix: normalise asylum index links`, `content: add tabs playground case`.
+Agents MUST work on `main` unless the user explicitly instructs otherwise. Merge completed work only with squash or rebase merges; do not create merge commits.
+
+Every activity and change MUST be committed to the repository with a clear, descriptive commit message. Every commit MUST reference one or more repository issues. If no suitable issue exists, open one before committing and reference it in the commit message.
+
+When opening or updating GitHub issues, inspect and apply suitable existing repository labels. Do not create or update repository labels unless the user explicitly confirms the label provisioning work.
+
+Use Conventional Commits and conventional changelog formatting for commit messages. Common types include `feat`, `fix`, `docs`, `style`, `refactor`, `test`, and `chore`; use `content` for case/content updates. Examples: `fix: normalise asylum index links`, `content: add tabs playground case`.
+
+When a task is done, include a closing notice such as `Closes #123` in the commit message so the issue closes when the commit is pushed to `main`.
 
 Pull requests should explain the case or reusable change, link issues or source threads when available, list verification commands run, and include screenshots for visible UI changes. Merge only reusable work back to `main`; messy but useful reproductions can remain unmerged on their branch.
 
