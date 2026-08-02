@@ -8,6 +8,6 @@
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock, .editorconfig, .release-it.ts, .gitignore",
     "README.md": "CHANGELOG.md, LICENSE.md",
     "AGENTS.md": "CLAUDE.md",
-    "astro.config.ts": ".editorconfig"
+    "astro.config.ts": ".editorconfig, biome.json"
   }
 }
