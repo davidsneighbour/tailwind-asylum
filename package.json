@@ -41,6 +41,12 @@
     "test:watch": "vitest"
   },
   "type": "module",
+  "overrides": {
+    "markdownlint-cli2": "0.23.2",
+    "markdownlint-rule-title-case-style": {
+      "markdownlint": "0.41.1"
+    }
+  },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@biomejs/biome": "2.5.6",
