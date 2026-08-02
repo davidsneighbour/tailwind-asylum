@@ -1,5 +1,5 @@
 {
-  "extends": "astro/tsconfigs/strictest",
+  "extends": "@dnbhq/tsconfig/astro",
   "include": [
     ".astro/types.d.ts",
     "**/*"
@@ -10,7 +10,6 @@
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "baseUrl": "./",
-    "strictNullChecks": true,
     "paths": {
       "@assets/*": [
         "src/assets/*"
