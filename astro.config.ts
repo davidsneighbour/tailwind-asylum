@@ -1,5 +1,4 @@
 import mdx from '@astrojs/mdx';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import type { Stats } from 'node:fs';
@@ -46,7 +45,7 @@ const isIgnoredDevServerPath = (filePath: string, stats?: Stats) => {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [expressiveCode(), mdx(), react(), sitemap(), icon()],
+  integrations: [expressiveCode(), mdx(), sitemap(), icon()],
   server: {
     host: true,
   },
