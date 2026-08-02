@@ -1,2 +1,17 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+/* Manual, class-based dark mode (toggled by Layout.astro) instead of the
+   media-query default, so the theme switch button actually does something. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: oklch(0.54 0.14 35);
+  --font-display: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/* Same token, retuned for dark mode so bg-accent/text-accent/border-accent
+   keep working without a second utility class. */
+.dark {
+  --color-accent: oklch(0.72 0.13 42);
+}

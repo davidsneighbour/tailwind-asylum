@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import FormattedDate from "@components/FormattedDate.astro";
+import Layout from "@layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const works = await getCollection("works");
+  return works.map((work) => ({
+    params: { slug: work.id },
+    props: work,
+  }));
+}
+type Props = CollectionEntry<"works">;
+
+const work = Astro.props;
+const { title, description, publishDate, thumbnail, tech } = work.data;
+const { Content } = await render(work);
+---
+
+<Layout title={title} description={description} image={thumbnail}>
+	<article>
+		{thumbnail && <Image width={1020} height={510} src={thumbnail} alt="" class="mb-8 w-full border border-neutral-200 dark:border-neutral-800" />}
+		<p class="font-mono text-xs text-accent"><FormattedDate date={publishDate} /></p>
+		<h1 class="font-display mt-2 mb-4 text-3xl font-semibold sm:text-4xl">{title}</h1>
+		{tech.length > 0 && (
+			<ul class="mb-8 flex flex-wrap gap-2">
+				{tech.map((item) => (
+					<li class="border border-neutral-200 px-2 py-1 font-mono text-xs text-neutral-600 dark:border-neutral-800 dark:text-neutral-400">
+						{item}
+					</li>
+				))}
+			</ul>
+		)}
+		<div class="prose dark:prose-invert max-w-none">
+			<Content />
+		</div>
+	</article>
+</Layout>

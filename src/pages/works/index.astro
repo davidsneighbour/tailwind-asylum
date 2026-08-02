@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+
+const works = (await getCollection("works")).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
+---
+
+<Layout title="Works" description="Project case studies and build notes.">
+	<p class="mb-3 text-xs font-semibold tracking-wide text-accent uppercase">Works</p>
+	<h1 class="font-display mb-8 text-3xl font-semibold sm:text-4xl">Built records.</h1>
+
+	{
+		works.length > 0 ? (
+			<ul class="divide-y divide-neutral-200 border-t border-neutral-200 dark:divide-neutral-800 dark:border-neutral-800">
+				{works.map((work) => (
+					<li class="py-6">
+						<a href={`/works/${work.id}/`} class="group flex gap-6">
+							{work.data.thumbnail && (
+								<Image
+									width={160}
+									height={110}
+									src={work.data.thumbnail}
+									alt=""
+									class="hidden h-27.5 w-40 shrink-0 border border-neutral-200 object-cover sm:block dark:border-neutral-800"
+								/>
+							)}
+							<div>
+								<h2 class="font-display text-xl font-semibold group-hover:text-accent">
+									{work.data.title}
+								</h2>
+								<p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{work.data.description}</p>
+							</div>
+						</a>
+					</li>
+				))}
+			</ul>
+		) : (
+			<div class="border-y border-neutral-200 py-8 text-neutral-600 dark:border-neutral-800 dark:text-neutral-400">
+				<p>
+					Nothing here yet &mdash; add entries under <code>src/content/works</code> to list projects.
+				</p>
+			</div>
+		)
+	}
+</Layout>

@@ -1,0 +1,14 @@
+---
+import { SITE_DESCRIPTION } from "@config/setup";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-neutral-200 dark:border-neutral-800">
+	<div
+		class="mx-auto flex max-w-3xl flex-col gap-2 px-4 py-8 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8 dark:text-neutral-400"
+	>
+		<p>&copy; {year} Tailwind Asylum &mdash; {SITE_DESCRIPTION}</p>
+		<a href="/rss.xml" class="text-neutral-500 hover:text-accent dark:text-neutral-400">RSS</a>
+	</div>
+</footer>
