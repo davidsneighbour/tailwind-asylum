@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import tailwindcss from '@tailwindcss/vite';
 
 import icon from 'astro-icon';
+import expressiveCode from 'astro-expressive-code';
 
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 const rootUppercaseFilePattern = /^[A-Z][A-Z0-9_-]*$/;
@@ -45,7 +46,7 @@ const isIgnoredDevServerPath = (filePath: string, stats?: Stats) => {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
-  integrations: [mdx(), react(), sitemap(), icon()],
+  integrations: [expressiveCode(), mdx(), react(), sitemap(), icon()],
   server: {
     host: true,
   },
