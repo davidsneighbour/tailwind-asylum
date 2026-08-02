@@ -23,7 +23,13 @@
     "astro": "astro",
     "build": "astro build",
     "check": "astro check",
+    "check:biome": "biome check .",
+    "check:biome:fix": "biome check --write .",
     "dev": "astro dev --verbose",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
     "preview": "astro preview",
     "test": "vitest --run --passWithNoTests",
     "test:watch": "vitest"
@@ -31,6 +37,8 @@
   "type": "module",
   "devDependencies": {
     "@astrojs/check": "0.9.10",
+    "@biomejs/biome": "2.5.6",
+    "@dnbhq/biome-config": "0.2.3",
     "@dnbhq/tsconfig": "0.1.6",
     "@iconify-json/lucide": "1.2.121",
     "@iconify-json/mdi": "1.2.3",
