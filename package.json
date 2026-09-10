@@ -60,6 +60,6 @@
     "@tailwindcss/typography": "0.5.20",
     "release-it": "21.0.1",
     "typescript": "6.0.3",
-    "vitest": "4.1.10"
+    "vitest": "4.1.11"
   }
 }
